@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Navbar.css"
+import profile from '../../assets/assets/my pic.png'
 
 const Navbar = () => {
     return (
@@ -9,7 +10,7 @@ const Navbar = () => {
                   <button className="text-xl cursor-pointer text-[#003EA4] font-medium">Auction <span className='text-[#FFD337] font-bold'>Gallery</span></button>
                 </div>
                 <div className="lg:flex">
-                    <ul className="menu menu-horizontal px-1 flex gap-1">
+                    <ul className="menu menu-horizontal px-1 flex gap-12">
                         <li><a>Home</a></li>
                         <li><a>Auctions</a></li>
                         <li><a>Categories</a></li>
@@ -30,7 +31,7 @@ const Navbar = () => {
                             <div className="w-10 rounded-full">
                                 <img
                                     alt="Tailwind CSS Navbar component"
-                                    src="src/assets/assets/my pic.png"/>
+                                    src={profile}/>
                             </div>
                         </div>
                     </div>
