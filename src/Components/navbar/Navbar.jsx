@@ -4,9 +4,9 @@ import "./Navbar.css"
 const Navbar = () => {
     return (
         <div className='font'>
-            <div className="navbar shadow-sm flex justify-between bg-white px-4">
+            <div className="navbar shadow-sm flex justify-between bg-white px-12">
                 <div>
-                  <button className="text-xl cursor-pointer">Auction gallery</button>
+                  <button className="text-xl cursor-pointer text-[#003EA4] font-medium">Auction <span className='text-[#FFD337] font-bold'>Gallery</span></button>
                 </div>
                 <div className="lg:flex">
                     <ul className="menu menu-horizontal px-1 flex gap-1">
