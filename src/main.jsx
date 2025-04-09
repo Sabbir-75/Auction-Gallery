@@ -5,6 +5,5 @@ import App from './App.jsx'
 // import '@fontsource/sora';
 
 createRoot(document.getElementById('root')).render(
-
     <App />
 )

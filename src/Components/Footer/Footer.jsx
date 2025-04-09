@@ -12,7 +12,7 @@ const Footer = () => {
                 <p className='text-lg font-normal text-[#000000]'>Own.</p>
             </div>
             <div className="flex mb-8 justify-center">
-                    <ul className="menu menu-horizontal px-1 flex gap-12">
+                    <ul className="menu menu-horizontal px-1 flex gap-8">
                         <li><a>Home</a></li>
                         <li><a>Auctions</a></li>
                         <li><a>Categories</a></li>
