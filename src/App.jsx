@@ -4,13 +4,15 @@ import Banner from './Components/banner/Banner'
 import Footer from './Components/Footer/Footer'
 import Navbar from './Components/navbar/Navbar'
 import Tables from './Components/Table/Tables'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
 
   const [add, setAdd] = useState(0)
 
   const favoriteHandler = (price) => {
-    setAdd(add + price)
+  let newAdddConvert = add + price
+    setAdd(newAdddConvert)
   }
 
   return (
@@ -22,11 +24,12 @@ function App() {
         <p className='text-xl font-normal text-black'>Discover and bid on extraordinary items</p>
       </div>
       <div className='max-w-[1170px] mx-auto px-4 sm:flex sm:justify-between gap-6 pt-6 pb-[100px]'>
-        
-          <div className='w-8/12 bg-[#FFFFFF] rounded-[24px] pt-6'>
-            <Tables favoriteHandler={favoriteHandler}></Tables>
-          </div>
-      
+
+        <div className='w-8/12 bg-[#FFFFFF] rounded-[24px] pt-6'>
+          <Tables favoriteHandler={favoriteHandler}></Tables>
+          <ToastContainer></ToastContainer>
+        </div>
+
         <div className='w-4/12'>
           <div className=' bg-[#FFFFFF] rounded-[24px] pt-6'>
             <div className='text-center flex justify-center gap-3 items-center pb-3 border-b-2 border-[#DCE5F3]'>
