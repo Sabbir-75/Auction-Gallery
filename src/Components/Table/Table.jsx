@@ -5,13 +5,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Table = ({ table, favoriteHandler }) => {
+const Table = ({ table, favoriteHandler,cardHandler, cardStatehandler}) => {
 
   const [state, setState] = useState(false)
 
   const stateHandler = () => {
     setState(true)
     favoriteHandler(table.currentBidPrice)
+    cardHandler(table)
+    cardStatehandler()
     toast.success('ℹ️ Item Added to your Favorite Lists', {
       position: "top-right",
       autoClose: 3000,

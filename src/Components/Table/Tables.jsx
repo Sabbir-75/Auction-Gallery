@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
 import Table from './Table';
 
-const Tables = ({favoriteHandler}) => {
+const Tables = ({favoriteHandler, cardHandler, cardStatehandler}) => {
 
     const [tables, setTables] = useState([])
 
@@ -27,7 +27,7 @@ const Tables = ({favoriteHandler}) => {
                     </thead>
                     <tbody>
                         {
-                            tables.map(table => <Table key={table.id} table={table} favoriteHandler={favoriteHandler}></Table>)
+                            tables.map(table => <Table key={table.id} table={table} favoriteHandler={favoriteHandler} cardHandler={cardHandler} cardStatehandler={cardStatehandler}></Table>)
                         }
                     </tbody>
                 </table>

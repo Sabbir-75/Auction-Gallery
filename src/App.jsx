@@ -5,16 +5,43 @@ import Footer from './Components/Footer/Footer'
 import Navbar from './Components/navbar/Navbar'
 import Tables from './Components/Table/Tables'
 import { ToastContainer } from 'react-toastify'
+import Cards from './Components/cards/cards'
+import Card from './Components/cards/card'
 
 function App() {
 
   const [add, setAdd] = useState(0)
 
   const favoriteHandler = (price) => {
-  let newAdddConvert = add + price
+    let newAdddConvert = add + price
     setAdd(newAdddConvert)
   }
 
+
+  const [card, setCard] = useState([])
+
+  const cardHandler = (table) => {
+    let newCard = [...card, table]
+    setCard(newCard)
+  }
+
+
+  const [cardState, setCardState] = useState(true)
+
+  const cardStatehandler = () => {
+    setCardState(false)
+  }
+
+  const subHandler = (subPrice) => {
+    let newSub = add - subPrice
+    setAdd(newSub)
+  }
+
+  const [cardremove, setCardremove] = useState(false)
+
+  const shoHidehandler = () => {
+    setCardremove(true)
+  }
   return (
     <>
       <Navbar></Navbar>
@@ -26,7 +53,7 @@ function App() {
       <div className='max-w-[1170px] mx-auto px-4 sm:flex sm:justify-between gap-6 pt-6 pb-[100px]'>
 
         <div className='w-8/12 bg-[#FFFFFF] rounded-[24px] pt-6'>
-          <Tables favoriteHandler={favoriteHandler}></Tables>
+          <Tables favoriteHandler={favoriteHandler} cardHandler={cardHandler} cardStatehandler={cardStatehandler}></Tables>
           <ToastContainer></ToastContainer>
         </div>
 
@@ -35,13 +62,27 @@ function App() {
             <div className='text-center flex justify-center gap-3 items-center pb-3 border-b-2 border-[#DCE5F3]'>
               <i className="fa-regular fa-heart text-2xl text-[#0E2954]"></i> <h3 className='text-[26px] font-medium text-[#0E2954]'>Favorite Items</h3>
             </div>
-            <div className='py-6 space-y-5 flex items-center flex-col border-b-2 border-[#DCE5F3]'>
-              <h2 className='text-[26px] font-medium text-black text-center'>No favorites yet</h2>
-              <p className='max-w-[287px] text-[18px] font-normal text-black text-center'>Click the heart icon on any item to add it to your favorites</p>
-            </div>
+
+
+
+
+           {
+            cardState ? <Cards></Cards> : <Card card={card} subHandler={subHandler} shoHidehandler={shoHidehandler}></Card>
+           }
+          
+            
+          
+          
+
+
+
+
+
+
+
             <div className='p-6 flex justify-between'>
-              <h2 className='text-[20px] font-normal text-black'>Total bids Amount</h2>
-              <p className='text-[20px] font-normal text-black'>${add}</p>
+              <h2 className='text-[20px] font-normal text-black'>Total bids Amount:</h2>
+              <p className='text-[20px] font-semibold text-black'>${add}</p>
             </div>
           </div>
         </div>
