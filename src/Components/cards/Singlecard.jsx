@@ -1,15 +1,16 @@
 import React from 'react';
 import { ImCross } from "react-icons/im";
 
-const Singlecard = ({ singleCard, removeHandler }) => {
+const Singlecard = ({ singleCard, removeHandler, cardStatehandler, enablehandler}) => {
 
     const removeHandlers = () => {
         removeHandler(singleCard.currentBidPrice)
-        console.log("...".padStart(19, singleCard.title));
+        cardStatehandler(singleCard.id)
+        enablehandler(singleCard.id)
     }
 
     return (
-        <div className='p-3 bg-amber-600 rounded-[15px] flex justify-between items-center border-2 border-[#DCE5F3]'>
+        <div className='p-3 bg-white mt-2 rounded-[15px] flex justify-between items-center border-2 border-[#DCE5F3]'>
             <div className='flex items-center gap-5'>
                 <img className='w-18 h-18 rounded-[10px]' src={singleCard.image} alt={singleCard.title} />
                 <div className='space-y-[2px]'>

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+
+import { useState } from "react";
 import "./Table Style/Table.css"
-import { Bounce, toast,} from 'react-toastify';
+import { Bounce, toast, } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const Table = ({ table, favoriteHandler,cardHandler, cardStatehandler}) => {
+const Table = ({ table, favoriteHandler, cardHandler}) => {
 
   const [state, setState] = useState(false)
 
@@ -13,10 +14,9 @@ const Table = ({ table, favoriteHandler,cardHandler, cardStatehandler}) => {
     setState(true)
     favoriteHandler(table.currentBidPrice)
     cardHandler(table)
-    cardStatehandler()
     toast.success('ℹ️ Item Added to your Favorite Lists', {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,
@@ -26,7 +26,6 @@ const Table = ({ table, favoriteHandler,cardHandler, cardStatehandler}) => {
       transition: Bounce
     });
   }
-
 
   return (
     <tr className='border-t-2 border-[#DCE5F3]'>

@@ -3,19 +3,16 @@ import { Bounce, toast, } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Singlecard from './Singlecard';
 
-const Card = ({ card, subHandler, shoHidehandler }) => {
-
+const Card = ({ card, subHandler,cardStatehandler, enablehandler}) => {
 
 
     const removeHandler = (subPrices) => {
 
-        shoHidehandler()
         subHandler(subPrices)
-
 
         toast.warn(' Item Removed From Favorites!', {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 1000,
             hideProgressBar: false,
             closeOnClick: false,
             pauseOnHover: true,
@@ -29,7 +26,7 @@ const Card = ({ card, subHandler, shoHidehandler }) => {
     return (
         <div className='px-3'>
             {
-                card.map(singleCard => <Singlecard key={singleCard.id} singleCard={singleCard} removeHandler={removeHandler}></Singlecard>)
+                card.map(singleCard => <Singlecard key={singleCard.id} singleCard={singleCard} removeHandler={removeHandler} cardStatehandler={cardStatehandler} enablehandler={enablehandler}></Singlecard>)
             }
         </div>
 

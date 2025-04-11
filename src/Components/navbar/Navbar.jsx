@@ -9,12 +9,12 @@ const Navbar = () => {
                 <div>
                   <button className="text-xl cursor-pointer text-[#003EA4] font-medium">Auction <span className='text-[#FFD337] font-bold'>Gallery</span></button>
                 </div>
-                <div className="lg:flex">
-                    <ul className="menu menu-horizontal px-1 flex gap-12">
-                        <li><a>Home</a></li>
-                        <li><a>Auctions</a></li>
-                        <li><a>Categories</a></li>
-                        <li><a>How to works</a></li>
+                <div>
+                    <ul className="menu menu-horizontal px-1 flex gap-2 lg:gap-12">
+                        <li className='hover:bg-[#FFD337] duration-300 rounded-sm'><a>Home</a></li>
+                        <li className='hover:bg-[#FFD337] duration-300 rounded-sm'><a>Auctions</a></li>
+                        <li className='hover:bg-[#FFD337] duration-300 rounded-sm'><a>Categories</a></li>
+                        <li className='hover:bg-[#FFD337] duration-300 rounded-sm'><a>How to works</a></li>
                     </ul>
                 </div>
                 <div className="flex gap-3">
