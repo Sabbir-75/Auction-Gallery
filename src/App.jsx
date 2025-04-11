@@ -19,7 +19,7 @@ function App() {
 
 
   const [card, setCard] = useState([])
- 
+
   const cardHandler = (table) => {
     let newCard = [...card, table]
     setCard(newCard)
@@ -38,14 +38,14 @@ function App() {
   const enablehandler = (id) => {
     setEnableState([...enableState, id])
   }
- 
+
 
   const subHandler = (subPrice) => {
     let newSub = add - subPrice
     setAdd(newSub)
   }
 
-  
+
   return (
     <>
       <Navbar></Navbar>
@@ -63,7 +63,7 @@ function App() {
         <div className='w-4/12'>
           <div className=' bg-[#FFFFFF] rounded-[24px] pt-6'>
             <div className='text-center flex justify-center gap-3 items-center pb-3 border-b-2 border-[#DCE5F3]'>
-              <i className="fa-regular fa-heart text-2xl text-[#0E2954]"></i> <h3 className='text-[26px] font-medium text-[#0E2954]'>Favorite Items</h3>
+              <i className="fa-solid fa-heart text-2xl text-red-500"></i> <h3 className='text-[26px] font-medium text-[#0E2954]'>Favorite Items</h3>
             </div>
 
             {
